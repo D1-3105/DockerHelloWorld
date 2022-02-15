@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog page</title>
+</head>
+<body>
+<a href="{%url 'create_post'%}">+Create new Post!</a>
+{%for blog in blogs%}
+<h2>{{blog.author}}</h2>
+<h3>{{blog.title}}</h3>
+<p>{{blog.txt}}</p>
+<p>{{blog.date}}</p>
+<a href="{%url 'delete_post' blog.pk%}">-Delete</a>
+<a href="{%url 'edit_post' blog.pk%}">+Edit</a>
+{%endfor%}
+</body>
+</html>
